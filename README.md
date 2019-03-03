@@ -53,3 +53,7 @@ Github plugin branch scanner is terriblily slow, and I don't know why.
 
 ### Nginx Ingress Controller
 Is almost de facto standard way to manage ingress in a environments with multiple applications. In this case, we have only three, but It will be useful anyways.
+
+### Security what?
+The cluster is a security disaster right now. We should improve the use of the service accounts. Also we need a 
+solution to avoid build images with the host machine docker daemon (Yes... that daemon runs as root). Kaniko could be an option.
