@@ -25,7 +25,7 @@ podTemplate(label: 'jenkins-agent-pod', containers: [
         container('docker') {
             script {
     	        docker.withRegistry('https://eu.gcr.io', 'gcr:adidas-test') {
-                    def customImage = docker.build("adidas-test-233013/adidas-test:pro.${BUILD_NUMBER}")
+                    def customImage = docker.build("adidas-test-233013/adidas-test:dev.${BUILD_NUMBER}")
                     customImage.push()        
                 }
             } 
@@ -35,7 +35,7 @@ podTemplate(label: 'jenkins-agent-pod', containers: [
        stage("Change image in Kubernetes Deployment") {    
         
         container('kubectl') {
-            sh 'kubectl set image deployment/adidas-test -n pro adidas-test=eu.gcr.io/adidas-test-233013/adidas-test:pro.${BUILD_NUMBER}' 
+            sh 'kubectl set image deployment/adidas-test -n dev adidas-test=eu.gcr.io/adidas-test-233013/adidas-test:dev.${BUILD_NUMBER}' 
         }
         
        }
