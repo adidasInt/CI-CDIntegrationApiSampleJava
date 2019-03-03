@@ -18,23 +18,21 @@ needed to deploy a new cluster is that template.
 ## Jenkins
 Jenkins provides us a platform to develop our pipeline as code, using Jenkinsfile. All the configuration 
 needed by jenkins is described in jenkins-values.yaml, a file ready to use with Helm.
-In this case, we use Jenkins Chart, that use Jenkins Kubernetes plugin to allow integrate Jenkins in a Kubernetes cluster. Amoung others, we have the capacity to deploy on demand Jenkins agents, allowing horizontal scalabillity. 
-Also provides the posibility to define containers inside a Jenkins file, using groovy.
+In this case, we use Jenkins Chart, that use Jenkins Kubernetes plugin to allow the integration of Jenkins in a Kubernetes cluster. Amoung others, we have the capacity to deploy on demand Jenkins agents, allowing horizontal scalabillity. Also provides the posibility to define containers inside a Jenkins file, using groovy.
 
 ## Helm
 Helm provides the capacity to deploy "Charts" in Kubernetes. In this case, we are only using Jenkins Chart, but 
-we have the posibility of install any type of application like prometheus or grafana.
+we have the posibility to install any type of application like prometheus or grafana.
 
 ## Github
-As SCM, Github allow to manage files and version of the code, but also manage the events sended to Jenkins
+As SCM, Github allow to manage files and version of the code, but also manage the events sended to Jenkins.
 
 ## Google Container Registry
-GCE provide a Docker Image Registry that fits perfecly with GKE, that avoid us work related with Image management and credentials.
-Also provide a GUI where we can manage the images.
+GCE provide a Docker Image Registry that fits perfecly with GKE, that avoid us work related with Image management and credentials. Also provide a GUI where we can manage the images.
 
 ## How it works?
-The final target is simple. If you push content to the branch develop in Github, you will see the changes in app-dev.rapibox.cloud only if the defined test pass.
-If you do the same against master, you will find your changes in app-raspibox.cloud (again, only if the test pass).
+The final target is simple. If you push content to the branch develop in Github, you will see the changes in *app-dev.rapibox.cloud* only if the defined test pass.
+If you do the same against master, you will find your changes in *app.raspibox.cloud* (again, only if the test pass).
 
 ## ToDo list (or wishlist)
 
