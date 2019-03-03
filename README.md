@@ -47,3 +47,9 @@ The GitFlow interaction in this case is quite simple. To achieve a similar real 
 
 ### Test something!
 The testing is one of the core componentes of the CI/CD operation and the DevOps development, if we don't have the propper test, we can't garantee the quality of the deployed software.
+
+### Github Plugin
+Github plugin branch scanner is terriblily slow, and I don't know why.
+
+### Nginx Ingress Controller
+Is almost de facto standard way to manage ingress in a environments with multiple applications. In this case, we have only three, but It will be useful anyways.
