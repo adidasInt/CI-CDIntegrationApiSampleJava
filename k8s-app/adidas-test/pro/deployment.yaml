@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    labels:
+        name: adidas-test
+    name: adidas-test
+    namespace: pro
+spec:
+    replicas: 2
+    revisionHistoryLimit: 3
+    template:
+        metadata:
+            labels:
+                app: adidas-test
+        spec:
+            containers:
+                - name: adidas-test
+                  imagePullPolicy: Always
+                  image: 'eu.gcr.io/adidas-test-233013/adidas-test:pro'
+                  env:
+                  - name: "JAVA_ENVIRONMENT"
+                    value: "dev"

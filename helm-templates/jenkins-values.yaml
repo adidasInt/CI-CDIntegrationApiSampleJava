@@ -1,0 +1,37 @@
+# See templates/_helpers.tpl
+# nameOverride:
+# fullnameOverride:
+Master:
+  Name: jenkins-master
+  Image: "jenkins/jenkins"
+  ImagePullPolicy: "Always"
+  Component: "jenkins-master"
+  UseSecurity: true
+  AdminUser: admin
+  InstallPlugins:
+   - kubernetes
+   - workflow-job
+   - workflow-aggregator
+   - credentials-binding
+   - git
+   - github
+   - blueocean
+   - google-container-registry-auth
+   - google-oauth-plugin
+  NodeSelector: {}
+  Tolerations: {}
+Agent:
+  Enabled: true
+  Image: jenkins/jnlp-slave
+  ImageTag: 3.10-1
+  Component: "jenkins-slave"
+  Privileged: false
+  AlwaysPullImage: true
+  volumes:
+    - type: HostPath
+      hostPath: /var/run/docker.sock
+      mountPath: /var/run/docker.sock
+  NodeSelector: {}
+## Install Default RBAC roles and bindings
+rbac:
+  install: true
