@@ -1,14 +1,15 @@
 # A Complete CI/CD proccess integration for apiSampleJava
 
 This repository provides all necesary components to platform and deploy a CI/CD proccess 
-to the application apiSampleJava.
+for the application apiSampleJava.
 
-The main componentes are the following:
+The main componentes are the followings:
 1. Kubernetes cluster, currently hosted in Google Cloud, using Google Kubernete Engine (GKE)
 2. Jenkins, as automation server, deployed in the Kubernetes cluster using helm
 3. Helm as package repository for Kubernetes
 4. Github as SCM
 5. Google Container Registry as Docker Images Registry
+6. Terraform as IaC tool
 
 ## Kubernetes powered by GKE
 In our case, GKE is deployed by a custom Terraform template, based in the Hashicorp default template for GKE.

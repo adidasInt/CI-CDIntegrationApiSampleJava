@@ -11,7 +11,7 @@ podTemplate(label: 'jenkins-agent-pod', containers: [
     node('jenkins-agent-pod') {
 
        stage("Git pull") {
-        git  'https://github.com/JDaniel1990/apiSampleJava.git'    
+        git url: 'https://github.com/JDaniel1990/apiSampleJava.git', branch: 'develop'    
        } 
 
        stage('Maven Build') {
