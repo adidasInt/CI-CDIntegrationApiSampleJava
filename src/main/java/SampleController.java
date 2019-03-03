@@ -11,7 +11,7 @@ public class SampleController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World 2!";
+        return "Hello World in develop!";
     }
 
     public static void main(String[] args) throws Exception {
