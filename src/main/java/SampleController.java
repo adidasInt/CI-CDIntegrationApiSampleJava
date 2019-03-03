@@ -11,7 +11,7 @@ public class SampleController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-        return "Hello World in prod! ";
+        return "Hello World in prod! Test it pushing content";
     }
 
     public static void main(String[] args) throws Exception {
